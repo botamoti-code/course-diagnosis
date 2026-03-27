@@ -225,7 +225,7 @@ ctaBtn.addEventListener('click', () => {
     setTimeout(() => {
       warningOverlay.classList.remove('active');
       window.open(CTA_URL, '_blank');
-    }, 6000);
+    }, 5000);
   } else {
     // Non-mebae: go directly
     window.open(CTA_URL, '_blank');
