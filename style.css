@@ -1,29 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
 
 :root {
-  --bg-primary: #0c0c1e;
-  --bg-secondary: #14142e;
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --text-primary: #f0f0ff;
-  --text-secondary: #a8a8cc;
-  --text-muted: #6b6b99;
-  --accent-gradient: linear-gradient(135deg, #e879a8, #c76bdb, #7c6bdb);
-  --accent-pink: #e879a8;
-  --accent-pink-glow: rgba(232, 121, 168, 0.3);
-  --accent-purple: #c76bdb;
-  --green-color: #22c55e;
-  --green-bg: rgba(34, 197, 94, 0.08);
-  --green-border: rgba(34, 197, 94, 0.3);
-  --pink-color: #ec4899;
-  --pink-bg: rgba(236, 72, 153, 0.08);
-  --pink-border: rgba(236, 72, 153, 0.3);
-  --red-color: #f97316;
-  --red-bg: rgba(249, 115, 22, 0.08);
-  --red-border: rgba(249, 115, 22, 0.3);
-  --radius: 16px;
-  --radius-sm: 12px;
+  --bg-primary: #1a1510;
+  --bg-secondary: #231f18;
+  --bg-card: rgba(45, 38, 28, 0.7);
+  --bg-card-hover: rgba(60, 50, 36, 0.8);
+  --glass-border: rgba(196, 164, 106, 0.2);
+  --text-primary: #f5efe4;
+  --text-secondary: #c4b092;
+  --text-muted: #8a7a62;
+  --accent-gradient: linear-gradient(135deg, #c4956a, #d4a574, #e8c99b);
+  --accent-gold: #d4a574;
+  --accent-gold-glow: rgba(212, 165, 116, 0.25);
+  --accent-deep: #a67c52;
+  --green-color: #7a9e7e;
+  --green-bg: rgba(122, 158, 126, 0.08);
+  --green-border: rgba(122, 158, 126, 0.25);
+  --pink-color: #c4727e;
+  --pink-bg: rgba(196, 114, 126, 0.08);
+  --pink-border: rgba(196, 114, 126, 0.25);
+  --red-color: #b85c3a;
+  --red-bg: rgba(184, 92, 58, 0.08);
+  --red-border: rgba(184, 92, 58, 0.25);
+  --sakura: #e8b4b8;
+  --sakura-bg: rgba(232, 180, 184, 0.06);
+  --wisteria: #9b8ec4;
+  --radius: 12px;
+  --radius-sm: 8px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -39,7 +42,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Zen Maru Gothic', 'Noto Serif JP', serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
@@ -47,6 +50,7 @@ body {
   position: relative;
 }
 
+/* Japanese-style background with subtle texture */
 body::before {
   content: '';
   position: fixed;
@@ -55,14 +59,14 @@ body::before {
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(232, 121, 168, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(199, 107, 219, 0.08), transparent),
-    radial-gradient(ellipse 50% 30% at 10% 60%, rgba(124, 107, 219, 0.06), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 165, 116, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 85%, rgba(196, 114, 126, 0.06), transparent),
+    radial-gradient(ellipse 50% 30% at 10% 60%, rgba(122, 158, 126, 0.05), transparent);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Floating particles */
+/* Subtle Japanese pattern overlay */
 body::after {
   content: '';
   position: fixed;
@@ -71,19 +75,18 @@ body::after {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(2px 2px at 20% 30%, rgba(232, 121, 168, 0.2), transparent),
-    radial-gradient(2px 2px at 40% 70%, rgba(199, 107, 219, 0.15), transparent),
-    radial-gradient(1px 1px at 60% 20%, rgba(255, 255, 255, 0.1), transparent),
-    radial-gradient(1px 1px at 80% 50%, rgba(232, 121, 168, 0.1), transparent),
-    radial-gradient(2px 2px at 10% 80%, rgba(124, 107, 219, 0.15), transparent),
-    radial-gradient(1px 1px at 90% 90%, rgba(255, 255, 255, 0.08), transparent);
+    radial-gradient(1.5px 1.5px at 15% 25%, rgba(212, 165, 116, 0.08), transparent),
+    radial-gradient(1px 1px at 35% 65%, rgba(196, 114, 126, 0.06), transparent),
+    radial-gradient(1px 1px at 55% 15%, rgba(232, 180, 184, 0.05), transparent),
+    radial-gradient(1.5px 1.5px at 75% 45%, rgba(212, 165, 116, 0.06), transparent),
+    radial-gradient(1px 1px at 85% 75%, rgba(122, 158, 126, 0.05), transparent);
   pointer-events: none;
   z-index: 0;
-  animation: sparkle 8s ease-in-out infinite alternate;
+  animation: sparkle 10s ease-in-out infinite alternate;
 }
 
 @keyframes sparkle {
-  0% { opacity: 0.6; }
+  0% { opacity: 0.5; }
   100% { opacity: 1; }
 }
 
@@ -100,15 +103,28 @@ body::after {
   justify-content: center;
 }
 
-/* ─── Glass Card ─── */
+/* ─── Decorative top line (和風) ─── */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   padding: 2.5rem 2rem;
   animation: fadeSlideUp 0.5s ease-out;
+  position: relative;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: var(--accent-gradient);
+  border-radius: 0 0 2px 2px;
 }
 
 @keyframes fadeSlideUp {
@@ -133,53 +149,82 @@ body::after {
 
 /* ─── Start Screen ─── */
 .start-screen .emoji-hero {
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-align: center;
-  margin-bottom: 1rem;
-  animation: float 3s ease-in-out infinite;
+  margin-bottom: 0.75rem;
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 和風の装飾ライン */
+.wa-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.wa-divider::before,
+.wa-divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.wa-divider .wa-symbol {
+  color: var(--accent-gold);
+  font-size: 0.7rem;
+  opacity: 0.6;
 }
 
 .start-screen h1 {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
 }
 
 .start-screen .subtitle {
   text-align: center;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .start-screen .feature-list {
   list-style: none;
   margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: rgba(212, 165, 116, 0.04);
+  border: 1px solid rgba(212, 165, 116, 0.1);
+  border-radius: var(--radius-sm);
 }
 
 .start-screen .feature-list li {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.6rem 0;
+  padding: 0.5rem 0;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .start-screen .feature-list li .icon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
 }
 
@@ -191,14 +236,15 @@ body::after {
   border: none;
   border-radius: var(--radius-sm);
   background: var(--accent-gradient);
-  color: white;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.1rem;
+  color: #2d261c;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  letter-spacing: 0.05em;
 }
 
 .btn-primary::after {
@@ -208,7 +254,7 @@ body::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: 0.6s;
 }
 
@@ -218,7 +264,7 @@ body::after {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px var(--accent-pink-glow);
+  box-shadow: 0 8px 30px var(--accent-gold-glow);
 }
 
 .btn-primary:active {
@@ -233,8 +279,8 @@ body::after {
   border-radius: var(--radius-sm);
   background: var(--bg-card);
   color: var(--text-primary);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1rem;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
@@ -242,8 +288,49 @@ body::after {
 
 .btn-secondary:hover {
   background: var(--bg-card-hover);
-  border-color: var(--accent-pink);
+  border-color: var(--accent-gold);
   transform: translateY(-1px);
+}
+
+/* CTA Button */
+.btn-cta {
+  display: block;
+  width: 100%;
+  padding: 1.1rem 2rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent-gradient);
+  color: #2d261c;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: 0.6s;
+}
+
+.btn-cta:hover::after {
+  left: 100%;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--accent-gold-glow);
 }
 
 /* ─── Quiz Screen ─── */
@@ -259,49 +346,56 @@ body::after {
 }
 
 .progress-label {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 .progress-count {
-  font-size: 0.85rem;
-  color: var(--accent-pink);
+  font-size: 0.8rem;
+  color: var(--accent-gold);
   font-weight: 700;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .progress-bar {
   width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 3px;
+  height: 4px;
+  background: rgba(196, 164, 106, 0.1);
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
   background: var(--accent-gradient);
-  border-radius: 3px;
+  border-radius: 2px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .question-number {
   display: inline-block;
-  font-size: 0.8rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--accent-pink);
-  background: rgba(232, 121, 168, 0.12);
+  color: var(--accent-gold);
+  background: rgba(212, 165, 116, 0.1);
   padding: 0.3rem 0.8rem;
-  border-radius: 20px;
+  border-radius: 4px;
   margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(212, 165, 116, 0.15);
 }
 
 .question-text {
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.7;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
 /* ─── Choices ─── */
@@ -309,20 +403,20 @@ body::after {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
   margin-bottom: 1.5rem;
 }
 
 .choice-btn {
   width: 100%;
   text-align: left;
-  padding: 1rem 1.25rem;
-  background: var(--bg-card);
-  border: 1px solid var(--glass-border);
+  padding: 0.9rem 1.1rem;
+  background: rgba(45, 38, 28, 0.5);
+  border: 1px solid rgba(196, 164, 106, 0.12);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 0.9rem;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.88rem;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
@@ -334,38 +428,41 @@ body::after {
 
 .choice-btn:hover:not(.selected):not(.dimmed) {
   background: var(--bg-card-hover);
-  border-color: var(--accent-pink);
-  transform: translateX(4px);
+  border-color: var(--accent-gold);
+  transform: translateX(3px);
 }
 
 .choice-label {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(232, 121, 168, 0.12);
-  color: var(--accent-pink);
-  font-size: 0.8rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  background: rgba(212, 165, 116, 0.1);
+  color: var(--accent-gold);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.75rem;
   font-weight: 700;
   flex-shrink: 0;
   transition: var(--transition);
+  border: 1px solid rgba(212, 165, 116, 0.15);
 }
 
 .choice-btn.selected {
-  background: var(--pink-bg);
-  border-color: var(--pink-border);
+  background: rgba(212, 165, 116, 0.1);
+  border-color: rgba(212, 165, 116, 0.35);
   cursor: default;
 }
 
 .choice-btn.selected .choice-label {
-  background: var(--accent-pink);
-  color: white;
+  background: var(--accent-gold);
+  color: #2d261c;
+  border-color: var(--accent-gold);
 }
 
 .choice-btn.dimmed {
-  opacity: 0.35;
+  opacity: 0.3;
   cursor: default;
 }
 
@@ -381,22 +478,24 @@ body::after {
 /* ─── Result Screen ─── */
 .result-screen .result-hero {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .result-screen .result-emoji {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  animation: float 3s ease-in-out infinite;
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+  animation: float 4s ease-in-out infinite;
 }
 
 .result-screen .result-title {
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: 0.05em;
 }
 
 /* ─── Course Card (Recommended) ─── */
@@ -416,7 +515,7 @@ body::after {
   right: 0;
   bottom: 0;
   border-radius: var(--radius);
-  padding: 2px;
+  padding: 1.5px;
   background: var(--accent-gradient);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -427,27 +526,28 @@ body::after {
 }
 
 .course-card.green {
-  background: rgba(34, 197, 94, 0.06);
+  background: var(--green-bg);
 }
 
 .course-card.pink {
-  background: rgba(236, 72, 153, 0.06);
+  background: var(--pink-bg);
 }
 
 .course-card.red {
-  background: rgba(249, 115, 22, 0.06);
+  background: var(--red-bg);
 }
 
 .course-badge {
   display: inline-block;
-  font-size: 0.7rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.65rem;
   font-weight: 700;
-  color: #fff;
+  color: #2d261c;
   background: var(--accent-gradient);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 .course-card-header {
@@ -463,14 +563,16 @@ body::after {
 }
 
 .course-name {
-  font-size: 1.2rem;
-  font-weight: 800;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
   margin-bottom: 0.25rem;
   color: var(--text-primary);
+  letter-spacing: 0.03em;
 }
 
 .course-tagline {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -481,13 +583,15 @@ body::after {
   gap: 0.25rem;
   margin-bottom: 1.25rem;
   padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(212, 165, 116, 0.05);
   border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 165, 116, 0.1);
 }
 
 .price-amount {
-  font-size: 2rem;
-  font-weight: 800;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -495,7 +599,7 @@ body::after {
 }
 
 .price-unit {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -509,45 +613,47 @@ body::after {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  padding: 0.4rem 0;
-  font-size: 0.88rem;
+  padding: 0.35rem 0;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .course-features .check {
-  color: var(--accent-pink);
+  color: var(--accent-gold);
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
 
 .course-desc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.7;
   padding-top: 1rem;
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid rgba(196, 164, 106, 0.1);
 }
 
 /* ─── Reason Box ─── */
 .reason-box {
-  background: rgba(232, 121, 168, 0.06);
-  border: 1px solid rgba(232, 121, 168, 0.2);
+  background: rgba(212, 165, 116, 0.04);
+  border: 1px solid rgba(212, 165, 116, 0.15);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
   margin-bottom: 2rem;
 }
 
 .reason-title {
-  font-size: 0.95rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--accent-pink);
+  color: var(--accent-gold);
   margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
 }
 
 .reason-text {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.8;
 }
@@ -558,22 +664,23 @@ body::after {
 }
 
 .all-courses-label {
-  font-size: 0.85rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 .all-courses {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .course-card-mini {
-  padding: 1.25rem 0.75rem;
+  padding: 1.1rem 0.65rem;
   border-radius: var(--radius-sm);
   text-align: center;
   position: relative;
@@ -597,51 +704,52 @@ body::after {
 }
 
 .course-card-mini.is-recommended {
-  border: 2px solid;
-  border-image: var(--accent-gradient) 1;
-  border-radius: var(--radius-sm);
-  border-image: none;
-  border-color: var(--accent-pink);
-  box-shadow: 0 0 20px rgba(232, 121, 168, 0.15);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.1);
 }
 
 .rec-tag, .pop-tag {
   display: inline-block;
-  font-size: 0.6rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.55rem;
   font-weight: 700;
-  padding: 0.15rem 0.5rem;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
 }
 
 .rec-tag {
-  color: white;
+  color: #2d261c;
   background: var(--accent-gradient);
 }
 
 .pop-tag {
-  color: var(--accent-pink);
-  background: rgba(232, 121, 168, 0.12);
+  color: var(--accent-gold);
+  background: rgba(212, 165, 116, 0.1);
 }
 
 .mini-emoji {
   display: block;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .mini-name {
-  font-size: 0.75rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
   line-height: 1.4;
+  letter-spacing: 0.03em;
 }
 
 .mini-price {
-  font-size: 0.95rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin-bottom: 0.65rem;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -649,7 +757,7 @@ body::after {
 }
 
 .mini-price span {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 500;
 }
 
@@ -659,19 +767,21 @@ body::after {
 }
 
 .mini-features li {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: var(--text-muted);
   line-height: 1.5;
-  padding: 0.2rem 0;
+  padding: 0.15rem 0;
   position: relative;
-  padding-left: 0.75rem;
+  padding-left: 0.7rem;
 }
 
 .mini-features li::before {
-  content: '•';
+  content: '◆';
   position: absolute;
   left: 0;
-  color: var(--accent-pink);
+  color: var(--accent-gold);
+  font-size: 0.4rem;
+  top: 0.3rem;
 }
 
 /* ─── Result Actions ─── */
@@ -679,6 +789,26 @@ body::after {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+/* ─── Wa-style decorative section break ─── */
+.wa-section-break {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+.wa-section-break::before,
+.wa-section-break::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196, 164, 106, 0.2), transparent);
 }
 
 /* ─── Responsive ─── */
@@ -692,16 +822,16 @@ body::after {
   }
 
   .start-screen h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .question-text {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .all-courses {
     grid-template-columns: 1fr;
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
 
   .course-card-mini {
@@ -710,7 +840,7 @@ body::after {
     grid-template-rows: auto auto;
     align-items: center;
     text-align: left;
-    padding: 1rem;
+    padding: 0.9rem;
     gap: 0 0.75rem;
   }
 
@@ -718,25 +848,25 @@ body::after {
   .course-card-mini .pop-tag {
     grid-column: 1 / -1;
     justify-self: start;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
   }
 
   .course-card-mini .mini-emoji {
     grid-row: 2;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 0;
   }
 
   .course-card-mini .mini-name {
     grid-row: 2;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-bottom: 0;
   }
 
   .course-card-mini .mini-price {
     grid-row: 2;
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 0.95rem;
     justify-self: end;
   }
 
@@ -745,11 +875,11 @@ body::after {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
   }
 
   .course-card-mini .mini-features li {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
   .course-emoji {
@@ -757,6 +887,6 @@ body::after {
   }
 
   .price-amount {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
