@@ -225,7 +225,7 @@ ctaBtn.addEventListener('click', () => {
     setTimeout(() => {
       warningOverlay.classList.remove('active');
       window.location.href = CTA_URL;
-    }, 5000);
+    }, 7000);
   } else {
     // Non-mebae: go directly
     window.location.href = CTA_URL;
