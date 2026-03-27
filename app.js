@@ -224,10 +224,10 @@ ctaBtn.addEventListener('click', () => {
     // After 6 seconds, hide warning and redirect
     setTimeout(() => {
       warningOverlay.classList.remove('active');
-      window.open(CTA_URL, '_blank');
+      window.location.href = CTA_URL;
     }, 5000);
   } else {
     // Non-mebae: go directly
-    window.open(CTA_URL, '_blank');
+    window.location.href = CTA_URL;
   }
 });
