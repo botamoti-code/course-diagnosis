@@ -140,6 +140,7 @@ function showResult() {
   showScreen(resultScreen);
 
   const recommended = getRecommendedCourse();
+  recommendedResult = recommended;
   const course = courseInfo[recommended];
 
   // Hero
@@ -201,9 +202,32 @@ function showResult() {
   }).join('');
 }
 
+// ─── Store recommended result ───
+let recommendedResult = null;
+
 // ─── Event Listeners ───
 startBtn.addEventListener('click', startQuiz);
 nextBtn.addEventListener('click', nextQuestion);
 retryBtn.addEventListener('click', () => {
   showScreen(startScreen);
+});
+
+// ─── CTA Button: 芽コースのみ警告表示 ───
+const ctaBtn = document.getElementById('cta-btn');
+const warningOverlay = document.getElementById('warning-overlay');
+const CTA_URL = 'https://utage-system.com/p/hoD17C6M8cVz';
+
+ctaBtn.addEventListener('click', () => {
+  if (recommendedResult === 'mebae') {
+    // Show warning overlay
+    warningOverlay.classList.add('active');
+    // After 6 seconds, hide warning and redirect
+    setTimeout(() => {
+      warningOverlay.classList.remove('active');
+      window.open(CTA_URL, '_blank');
+    }, 6000);
+  } else {
+    // Non-mebae: go directly
+    window.open(CTA_URL, '_blank');
+  }
 });
