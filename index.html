@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>五方よし起業道場 — コース診断</title>
+  <meta name="description" content="5つの質問に答えるだけで、あなたにぴったりのコースがわかる！五方よし起業道場のコース診断。" />
+  <meta property="og:title" content="五方よし起業道場 — コース診断" />
+  <meta property="og:description" content="5つの質問に答えるだけで、あなたにぴったりのコースが見つかります。芽・華・実、あなたの最適なスタートはどこ？" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- ════════ Start Screen ════════ -->
+    <div id="start-screen" class="screen active">
+      <div class="glass-card start-screen">
+        <div class="emoji-hero">🌸</div>
+        <h1>あなたにぴったりの<br>コースを診断</h1>
+        <p class="subtitle">
+          たった5つの質問に答えるだけで<br>
+          あなたに最適なコースがわかります
+        </p>
+        <ul class="feature-list">
+          <li><span class="icon">✨</span> たった5問・約1分で完了</li>
+          <li><span class="icon">🎯</span> 3つのコースから最適を提案</li>
+          <li><span class="icon">💡</span> 今の状況に合わせた診断</li>
+        </ul>
+        <button id="start-btn" class="btn-primary">診断をはじめる 🚀</button>
+      </div>
+    </div>
+
+    <!-- ════════ Quiz Screen ════════ -->
+    <div id="quiz-screen" class="screen">
+      <div class="glass-card">
+        <div class="quiz-header">
+          <div class="progress-info">
+            <span class="progress-label">進捗</span>
+            <span id="progress-count" class="progress-count">1 / 5</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <span id="question-number" class="question-number">Q1</span>
+        <p id="question-text" class="question-text"></p>
+
+        <ul id="choices-list" class="choices-list"></ul>
+
+        <button id="next-btn" class="btn-primary btn-next">次の質問へ →</button>
+      </div>
+    </div>
+
+    <!-- ════════ Result Screen ════════ -->
+    <div id="result-screen" class="screen">
+      <div class="glass-card result-screen">
+        <div class="result-hero">
+          <div id="result-emoji" class="result-emoji">🌸</div>
+          <h2 id="result-title" class="result-title">あなたにおすすめのコース</h2>
+        </div>
+
+        <div id="result-course" class="result-course-card">
+          <!-- Filled by JS -->
+        </div>
+
+        <div id="result-reason" class="result-reason">
+          <!-- Filled by JS -->
+        </div>
+
+        <div class="all-courses-section">
+          <p class="all-courses-label">全コース一覧</p>
+          <div id="all-courses" class="all-courses">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button id="retry-btn" class="btn-secondary">もう一度診断する 🔄</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="quiz-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
