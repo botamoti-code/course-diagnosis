@@ -81,11 +81,19 @@ function renderQuestion() {
 
 // ─── Handle Answer ───
 function handleAnswer(selectedIndex) {
-  if (answered) return;
+  const q = quizData[currentQuestion];
+
+  // If already answered, subtract previous scores first
+  if (answered && selectedChoiceIndex !== null) {
+    const prevScores = q.choices[selectedChoiceIndex].score;
+    scores.mebae -= prevScores.mebae;
+    scores.hana -= prevScores.hana;
+    scores.minori -= prevScores.minori;
+  }
+
   answered = true;
   selectedChoiceIndex = selectedIndex;
 
-  const q = quizData[currentQuestion];
   const choiceScores = q.choices[selectedIndex].score;
 
   // Add scores
@@ -96,10 +104,9 @@ function handleAnswer(selectedIndex) {
   // Highlight selected choice
   const buttons = choicesList.querySelectorAll('.choice-btn');
   buttons.forEach((btn, index) => {
+    btn.classList.remove('selected', 'dimmed');
     if (index === selectedIndex) {
       btn.classList.add('selected');
-    } else {
-      btn.classList.add('dimmed');
     }
   });
 
