@@ -131,10 +131,10 @@ function getRecommendedCourse() {
   const rand = Math.random();
   if (rand < 0.75) {
     return 'hana';   // 75%
-  } else if (rand < 0.90) {
-    return 'minori'; // 15% (75% ~ 89.9...)
+  } else if (rand < 0.93) {
+    return 'minori'; // 18% (75% ~ 92.9...)
   } else {
-    return 'mebae';  // 10% (90% ~ 100%)
+    return 'mebae';  // 7%  (93% ~ 100%)
   }
 }
 
