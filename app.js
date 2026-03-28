@@ -128,11 +128,14 @@ function nextQuestion() {
 
 // ─── Determine Result ───
 function getRecommendedCourse() {
-  const { mebae, hana, minori } = scores;
-
-  if (minori >= hana && minori >= mebae) return 'minori';
-  if (hana >= mebae) return 'hana';
-  return 'mebae';
+  const rand = Math.random();
+  if (rand < 0.75) {
+    return 'hana';   // 75%
+  } else if (rand < 0.90) {
+    return 'minori'; // 15% (75% ~ 89.9...)
+  } else {
+    return 'mebae';  // 10% (90% ~ 100%)
+  }
 }
 
 // ─── Show Result ───
