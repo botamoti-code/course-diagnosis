@@ -126,15 +126,25 @@ function nextQuestion() {
   }
 }
 
-// ─── Determine Result ───
 function getRecommendedCourse() {
+  const { mebae, hana, minori } = scores;
+
+  // 1. 回答スコアが10点以上（そのコースを強く希望する回答をした場合）は、
+  // 確率に関係なく確実にそのコースを結果として出します。
+  // これによりテスト動作時など、意図的にコースを狙って結果を出すことができます。
+  if (hana >= 10 && hana >= minori && hana >= mebae) return 'hana';
+  if (minori >= 10 && minori >= hana && minori >= mebae) return 'minori';
+  if (mebae >= 10 && mebae >= hana && mebae >= minori) return 'mebae';
+
+  // 2. とくに希望が偏っていない一般的な回答層に対しては、
+  // 指定の確率（華60% / 実28% / 芽12%）で自動的に割り振ります。
   const rand = Math.random();
   if (rand < 0.60) {
     return 'hana';   // 60%
   } else if (rand < 0.88) {
-    return 'minori'; // 28% (60% ~ 87.9...)
+    return 'minori'; // 28%
   } else {
-    return 'mebae';  // 12% (88% ~ 100%)
+    return 'mebae';  // 12%
   }
 }
 
