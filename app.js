@@ -129,12 +129,12 @@ function nextQuestion() {
 // ─── Determine Result ───
 function getRecommendedCourse() {
   const rand = Math.random();
-  if (rand < 0.75) {
-    return 'hana';   // 75%
-  } else if (rand < 0.93) {
-    return 'minori'; // 18% (75% ~ 92.9...)
+  if (rand < 0.60) {
+    return 'hana';   // 60%
+  } else if (rand < 0.88) {
+    return 'minori'; // 28% (60% ~ 87.9...)
   } else {
-    return 'mebae';  // 7%  (93% ~ 100%)
+    return 'mebae';  // 12% (88% ~ 100%)
   }
 }
 
